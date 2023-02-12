@@ -35,10 +35,10 @@ void rowreduce(float matrix[][10], int n, int m){
 		float pivot,mult; 
 		for(int i =0; i<n; i++){
 			if(i!=count){
-				pivot = matrix[count][count]; // I am simply assigning the i ==j elements into pivot variable
-				mult =matrix[i][count]/matrix[count][count]; // dividing i!=j element by i==j element
+				pivot = matrix[count][count]; // this condition locate pivot element 
+				mult =matrix[i][count]/matrix[count][count]; //  dividing non-pivot element by pivot element
 				for(int j =0; j<m; j++){
-					if(i==count)// which is also i==j that is all pivot elements 
+					if(i==count)//condtion where pivot element is divided by itself
 						matrix[i][j] = matrix[i][j]/pivot; // making pivot element 1
 					else
 						matrix[i][j] = matrix[i][j] - matrix[count][j]*mult; // making non-pivot element zero
